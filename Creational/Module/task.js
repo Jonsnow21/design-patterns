@@ -1,6 +1,8 @@
+let Repo = require('./taskRepository');
+
 class Task {
-    constructor(name) {
-        this.name = name;
+    constructor(data) {
+        this.name = data.name;
         this.completed = false;
     }
 
@@ -11,6 +13,7 @@ class Task {
 
     save() {
         console.log(`saving task: ${this.name}`);
+        Repo.save(this);
     }
 }
 
